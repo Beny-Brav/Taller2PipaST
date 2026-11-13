@@ -5,7 +5,7 @@ using UnityEngine;
 public class NewBehaviourScript : MonoBehaviour
 {
     public GameObject readSection;
-    [SerializeField] private int Movimiento = 57; 
+    [SerializeField] private int Movimiento = 70; 
     private void OnTriggerEnter(Collider other) 
     {
         if (other.gameObject.CompareTag("Trigger"))

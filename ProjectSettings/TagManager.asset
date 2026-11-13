@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Trigger
   - Destroy
+  - Enemigo
+  - Obstaculo
   layers:
   - Default
   - TransparentFX
