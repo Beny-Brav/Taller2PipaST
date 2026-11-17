@@ -19,9 +19,12 @@ public class Movimiento : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Destroy"))
+        Debug.Log("TOQUE DETECTADO");
+
+        if (other.CompareTag("Destroy"))
         {
             Destroy(gameObject);
         }
+
     }
 }
