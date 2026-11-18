@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class ControlDerrota : MonoBehaviour
 {
     [SerializeField] private GameObject menuDerrota;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip sonidoMuerte;
 
     private bool perdio = false;
 
@@ -57,6 +60,9 @@ public class ControlDerrota : MonoBehaviour
 
         if (menuDerrota != null)
             menuDerrota.SetActive(true);
+
+        if (audioSource != null && sonidoMuerte != null)
+        audioSource.PlayOneShot(sonidoMuerte);    
 
         Time.timeScale = 0f;
     }

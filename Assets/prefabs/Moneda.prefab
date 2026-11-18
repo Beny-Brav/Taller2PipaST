@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadGiro: 120
+  sonidoRecoleccion: {fileID: 0}
   aparicionPorDistancia: 1
   distanciaVisibleCompleta: 50
   distanciaOculta: 90

@@ -3,6 +3,7 @@ using UnityEngine;
 public class Moneda : MonoBehaviour
 {
     [SerializeField] private float velocidadGiro = 120f;
+    [SerializeField] private AudioClip sonidoRecoleccion;
 
     [Header("Aparicion suave segun la distancia al jugador")]
     [SerializeField] private bool aparicionPorDistancia = true;
@@ -69,6 +70,9 @@ public class Moneda : MonoBehaviour
 
         if (ControlPuntaje.Instancia != null)
             ControlPuntaje.Instancia.AgregarMoneda();
+
+        if (sonidoRecoleccion != null)
+        AudioSource.PlayClipAtPoint(sonidoRecoleccion, transform.position);    
 
         Destroy(gameObject);
     }

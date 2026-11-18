@@ -22,9 +22,9 @@ public class GeneradorMonedas : MonoBehaviour
     [SerializeField] private float alturaExtra = 0.5f;
    
     [SerializeField] private bool haciaElJugador = true;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip sonidoAparicion;
 
-    [Header("Depuracion")]
-    [SerializeField] private bool mostrarMensajes = true;
 
     private struct Tramo
     {
@@ -99,8 +99,12 @@ public class GeneradorMonedas : MonoBehaviour
             }
         }
 
-        if (mostrarMensajes)
-            Debug.Log("GeneradorMonedas (" + name + "): se generaron " + totalMonedas + " monedas", this);
+        if (totalMonedas > 0 && audioSource != null && sonidoAparicion != null)
+        {
+             audioSource.PlayOneShot(sonidoAparicion);
+        }
+
+
     }
 
    

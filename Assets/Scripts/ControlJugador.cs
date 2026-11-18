@@ -9,6 +9,8 @@ public class ControlJugador : MonoBehaviour
     [SerializeField] private GameObject proyectil;
     [SerializeField] private Transform puntoDisparo;
     [SerializeField] private float intervaloDisparo = 0.5f;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip sonidoDisparo;
 
     private float posicionInicialX;
     private float siguienteDisparo;
@@ -58,6 +60,9 @@ public class ControlJugador : MonoBehaviour
             return;
 
         Instantiate(proyectil, puntoDisparo.position, Quaternion.identity);
+
+        if (audioSource != null && sonidoDisparo != null)
+        audioSource.PlayOneShot(sonidoDisparo);
 
         siguienteDisparo = Time.time + Mathf.Max(0.5f, intervaloDisparo);
     }

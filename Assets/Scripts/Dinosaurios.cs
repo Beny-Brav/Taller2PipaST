@@ -4,6 +4,7 @@ public class Dinosaurio : MonoBehaviour
 {
     [SerializeField] private float velocidad = 2f;
     [SerializeField] private float duracionMuerte = 1.5f;
+    [SerializeField] private AudioClip sonidoMuerte;
 
     private Animator animator;
     private bool estaMuerto = false;
@@ -33,6 +34,13 @@ public class Dinosaurio : MonoBehaviour
         {
             animator.SetTrigger("Morir");
         }
+
+        if (sonidoMuerte != null)
+        {
+        AudioSource.PlayClipAtPoint(sonidoMuerte, transform.position);
+        }
+
+        
 
         foreach (Collider col in GetComponentsInChildren<Collider>())
         {
